@@ -12,10 +12,8 @@ var Vue = require('vue');
 var VueTalk = require('vue-talk');
 Vue.use(VueTalk);
 ```
-
+### Styles
 Add the css located in **src/css/chat.css** in your project.
-
-
 
 ### Usage
 
