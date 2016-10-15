@@ -56,6 +56,9 @@ module.exports = {
 			this.fn_driverFetchUsers = configs.driverFetchUsers || this.fn_driverFetchUsers;
 			this.fn_driverFetchUsersSuccess = configs.driverFetchUsersSuccess || this.fn_driverFetchUsersSuccess;
 			this.configs.title = configs.title || this.configs.title;
+			this.configs.button_text = configs.button_text || this.configs.button_text;
+			this.configs.button_chat = configs.button_chat || this.configs.button_chat;
+			this.configs.users_tab_text = configs.users_tab_text || this.configs.users_tab_text;
 			this.configs.endPointFetchUsers = configs.endPointFetchUsers || this.configs.endPointFetchUsers;
 
 			if(!this.configs.endPointFetchUsers){
@@ -71,7 +74,6 @@ module.exports = {
 			}
 			this.chat_element = document.getElementById('chat-room-'+this.roomName);
 			this.scroller_element = document.querySelector('#chat-room-'+this.roomName+' .wb-chat-scroll-controller');
-			console.log(this.scroller_element.offsetHeight)
 			this.setUser(data.user);
 			this.socketMount(data.socket);
 			this.user.online = true;

@@ -47,15 +47,15 @@ Starts the the chat using the following code
 Default template:
 
 ```html
-<div class="wb-chat">
+<div class="wb-chat" v-bind:id="'chat-room-' + roomName">
     <div class="wb-chat-header">
-        {{configs.title}} <button class="btn pull-right btn-small"><i class="fa fa-cog"></i></button>
+        {{configs.title}} <button class="wb-chat-button" v-on:click="tabUsers = true">{{configs.button_text}}</button>
     </div>
-    <div class="wb-chat-messages">
+    <div class="wb-chat-messages wb-chat-scroll-controller" v-on:scroll="onScroll">
         <div v-for="(message, $index) in messages">
             <div class="wb-chat-user" v-if="(typeof messages[$index - 1] != 'undefined' && messages[$index - 1].user_id != message.user_id) || typeof messages[$index - 1] == 'undefined'">
-                <img v-bind:src="VTUsers['u_'+message.user_id] ? VTUsers['u_'+message.user_id].img : ''" />
-                <strong>{{VTUsers['u_'+message.user_id] ? VTUsers['u_'+message.user_id].name : ''}}</strong>
+                <img v-bind:src="VTUsers[message.user_id] ? VTUsers[message.user_id].img : ''" />
+                <div>{{VTUsers[message.user_id] ? VTUsers[message.user_id].name : ''}}</div>
             </div>
             <div class="wb-chat-m">{{message.message}}</div>
         </div>
@@ -63,15 +63,45 @@ Default template:
     <div class="wb-chat-input">
         <textarea v-bind:placeholder="configs.inputPlaceholder" v-model="message" v-on:keyup.enter="sendMessage"></textarea>
     </div>
+
+    <transition name="wb-chat-tab-users">
+        <div class="wb-chat-users" v-if="tabUsers">
+            <div class="wb-chat-header">
+                {{configs.users_tab_text}} <button class="wb-chat-button" v-on:click="tabUsers = false">{{configs.button_chat}}</button>
+            </div>
+            <div class="wb-chat-messages">
+                <div v-for="user in VTUsers">
+                    <div class="wb-chat-user">
+                        <img v-bind:src="user.img" />
+                        <div>{{user.name}}</div>
+                        <span v-bind:class="{online:user.online}">&#9679</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
 </div>
 ```
 **Custom Template**
 
-You can edit it as you like, but you need to use the following objects and events:
+You can pass in the config the new texts for:
+
+| Name | Description |
+| --- | --- |
+| title | Chat title |
+| button_text | Text for the button to show the users |
+| users_tab_text | Title in users tab |
+| button_chat | Text in the button to show the chat |
+| inputPlaceholder | Placeholder to use in the chat |
+
+You can edit it as you like, but you should use the following objects and events:
 
 | Name | Description |
 | --- | --- |
 | configs.title | Chat title |
+| configs.button_text | Text for the button to show the users |
+| configs.users_tab_text | Title in users tab |
+| configs.button_chat | Text in the button to show the chat |
 | configs.inputPlaceholder | Placeholder to use in the chat |
 | message | Model that holds the message that the user is typing |
 | messages | Array of messages stored in the component |
