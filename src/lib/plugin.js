@@ -1,5 +1,5 @@
 var Plugin = function () {};
-var component = require('./components/chat.js');
+var component = require('../components/chat.js');
 Plugin.install = function(Vue, _options){
 	var options = _options || {};
 	var str = options.template || `
