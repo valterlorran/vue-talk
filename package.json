@@ -1,6 +1,6 @@
 {
   "name": "vue-talk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple chat to vue.js.",
   "main": "src/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/valterlorran/vue-chat.git"
+    "url": "git+https://github.com/valterlorran/vue-talk.git"
   },
   "keywords": [
     "Vuejs",
@@ -19,9 +19,9 @@
   "author": "Valter Lorran (http://valterlorran.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/valterlorran/vue-chat/issues"
+    "url": "https://github.com/valterlorran/vue-talk/issues"
   },
-  "homepage": "https://github.com/valterlorran/vue-chat#readme",
+  "homepage": "https://github.com/valterlorran/vue-talk#readme",
   "dependencies": {
     "require-text": "0.0.1"
   }
