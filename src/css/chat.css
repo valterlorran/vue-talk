@@ -1,0 +1,105 @@
+.wb-chat{
+	height: 100%;
+	padding-top: 45px;
+	padding-bottom: 80px;
+	position: relative;
+	overflow: hidden;
+}
+.wb-chat .wb-chat-user div{
+	font-weight: bold;
+}
+.wb-chat-header{
+	height: 35px;
+	line-height: 35px;
+	border-bottom:1px solid #eee;
+	border-top:1px solid #eee;
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+}
+.wb-chat-button{
+	padding: 4px 6px;
+    font-size: 13px;
+    line-height: 13px;
+    background: #5c6bc0;
+    color: #fff;
+    border: 1px solid #3f51b5;
+    float: right;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.wb-chat-button:hover, .wb-chat-button:focus{
+	background: #3f51b5;
+}
+.wb-chat-button:active{
+	background: #303f9f;
+}
+.wb-chat-input{
+	position: absolute;
+	height: 70px;
+	bottom: 0px;
+	width: 100%;
+}
+.wb-chat-input textarea{
+	width: 100%;
+	height: 70px;
+	resize: none;
+	border:1px solid #ddd;
+}
+.wb-chat-messages{
+	max-height: 100%;
+	overflow-y: scroll;
+	height: 100%;
+}
+.wb-chat-m{
+	padding-left: 40px;
+}
+.wb-chat-users{
+	background: #fff;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	top: 0px;
+	padding-top: 45px;
+}
+.wb-chat-users .wb-chat-messages{
+	height: 100%;
+}
+.wb-chat-users .wb-chat-user{
+	padding-right: 20px;
+}
+.wb-chat-users .wb-chat-user span{
+	color: #ccc;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.wb-chat-users .wb-chat-user span.online{
+	color: #00e676;
+}
+.wb-chat-users .wb-chat-user div{
+	padding-top: 5px;
+}
+.wb-chat-user{
+	padding-left: 40px;
+	position: relative;
+	margin-top: 10px;
+}
+.wb-chat-user img{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: 5px;
+}
+.wb-chat-user img{
+	width: 30px;
+	height: 30px;
+}
+.wb-chat-tab-users-enter-active, .wb-chat-tab-users-leave-active {
+  	transition: all .2s;
+}
+.wb-chat-tab-users-enter, .wb-chat-tab-users-leave-active {
+  	opacity: 0;
+  	left: 100%;
+}

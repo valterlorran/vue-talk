@@ -13,6 +13,10 @@ var VueTalk = require('vue-talk');
 Vue.use(VueTalk);
 ```
 
+Add the css located in **src/css/chat.css** in your project.
+
+
+
 ### Usage
 
 Add the component where you want to display the chat.

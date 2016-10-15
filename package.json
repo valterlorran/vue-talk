@@ -1,6 +1,6 @@
 {
   "name": "vue-talk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple chat to vue.js.",
   "main": "src/index.js",
   "scripts": {
