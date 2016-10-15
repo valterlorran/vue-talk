@@ -67,9 +67,8 @@ Default template:
 ```
 **Custom Template**
 
-
-
 You can edit it as you like, but you need to use the following objects and events:
+
 | Name | Description |
 | --- | --- |
 | configs.title | Chat title |
@@ -104,7 +103,7 @@ var configs = {
 
 **Notice:** if you change the request driver you'll probably need to to change the Request Response Driver(see next). The default driver expects a response simlar to:
 
-```json
+```js
 var response = {
     /* ... */
     data:[ /* users array */ ]
@@ -150,14 +149,14 @@ The expected response is something like:
 ```json
 [
  {
-    id:1,
-    name:"Valter Lorran",
-    img:"profile.jpg"
+    "id":1,
+    "name":"Valter Lorran",
+    "img":"profile.jpg"
  },
  {
-    id:2,
-    name:"Vera Silviane",
-    img:"profile.jpg"
+    "id":2,
+    "name":"Vera Silviane",
+    "img":"profile.jpg"
  },
  /* ... */
 ]
